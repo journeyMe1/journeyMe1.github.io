@@ -23,14 +23,14 @@
   <meta name="description" content="解决bug集合体">
 <meta property="og:type" content="website">
 <meta property="og:title" content="花有重开日の博客">
-<meta property="og:url" content="http://journeyme1.github.io/index.html">
+<meta property="og:url" content="https://journeyme1.github.io/index.html">
 <meta property="og:site_name" content="花有重开日の博客">
 <meta property="og:description" content="解决bug集合体">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="花有重开日">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://journeyme1.github.io/">
+<link rel="canonical" href="https://journeyme1.github.io/">
 
 
 <script id="page-configurations">
@@ -134,7 +134,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">13</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">14</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -191,7 +191,88 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://journeyme1.github.io/2021/08/08/title-md/">
+    <link itemprop="mainEntityOfPage" href="https://journeyme1.github.io/2021/08/13/21-8-13%E6%9C%AC%E5%91%A8%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/001.jpg">
+      <meta itemprop="name" content="花有重开日">
+      <meta itemprop="description" content="解决bug集合体">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="花有重开日の博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/08/13/21-8-13%E6%9C%AC%E5%91%A8%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">21.8.13本周总结</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-08-13 19:13:58 / 修改时间：19:32:43" itemprop="dateCreated datePublished" datetime="2021-08-13T19:13:58+08:00">2021-08-13</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>推荐一个网址“菜鸟教程”，即开即用</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.runoob.com</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>1.我做了一个主页面，两个子页面，两个弹窗。用到的按钮：新增、删除、取消、保存并继续、保存、修改。数据格式的判断，几个按钮背后的功能。<br>2.代码量：前端一两千行JS，<br>3.用到的技术：组件，JS，HTML，ajax，jsonRPC,<br>4.了解了：①ajax什么时候请求，②模态框的弹出，表单内容的填写，③前端对所写的数据格式判断，格式正确才传给后端处理，格式不正确弹窗报错。④删除数据、新增数据，下拉框更改会重新请求，得到新的数据或者删除数据，都会刷新表单。⑤组件库查看用到的组件( 比如xyz-simple-datatables)的示例，了解每一个函数的功能和返回值，分析它们接收到的数据格式data。⑥F12 查看source源码，index.html ⑦ F12 NEWWORK查看XHR请求，先查看参数params，然后查看preview后端返回的数据 ⑧ajax请求随着每一次初始化（即函数的调用）而请求<br>5.接下来的计划：学习后端服务编写，SQL命令</p>
+<p>觉得前端拿到数据，怎么展示，这边才是麻烦的地方，前端也不轻松</p>
+<p>其实，前端就是那样，比如我们输入账号密码，登录都是要去后端数据库核对的，正确才能登录。但是不能什么数据都往数据库丢，不然数据库处理压力太大。<br>前端会把不符合格式的数据筛选掉，提示：格式不正确，重新输入。只有正确格式的，经过前端筛选，才会往数据库传送、核对</p>
+<p>js -&gt;ajax -&gt; 后台服务方法-&gt;mybatis -&gt;数据库<br>整个流程，下次面试再问到，就不会再回答不上来了</p>
+<p>200：成功，300：转发或重定向，400：URL路径错误或不存在，500：服务器问题</p>
+<h2 id="关于ajax"><a href="#关于ajax" class="headerlink" title="关于ajax"></a>关于ajax</h2><p>$.jsonRPC.request 这个请求有点像得axios.get<br>返回数据都是放在response<br>ajax返回好像是放在data</p>
+<p>vue这里不是赋值，而是引用传递<br>that指向本地数据<br>这里的this指向了回调函数</p>
+<p>都是查数据查数据，select，然后前端判断符合条件吗，符合就显示出来</p>
+<p>感觉前端拿到数据之后，要做的工作量，比后端还大啊</p>
+<p>ajax一定要看视频去学一下，就两三个小时，重要看老师实际操作，要看一下请求怎么发生的，什么时候发生的，虽然简单，但是非常有利于你对之后实际项目的理解，我又理解了两天，今天结合后端，慢慢有点看懂这个1000行的JS的逻辑了。有些事初始化就要请求数据显示出来，有些是点击按钮请求数据显示出来，有些是下拉框更换请求数据重新刷新</p>
+<h2 id="JS常用方法"><a href="#JS常用方法" class="headerlink" title="JS常用方法"></a>JS常用方法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">一、jQuery.extend() 函数用于将一个或多个对象的内容合并到目标对象。</span><br><span class="line">注意：①. 如果只为$.extend()指定了一个参数，则意味着参数target被省略。此时，target就是jQuery对象本身。通过这种方式，我们可以为全局对象jQuery添加新的函数。</span><br><span class="line">②. 如果多个对象具有相同的属性，则后者会覆盖前者的属性值。</span><br><span class="line"></span><br><span class="line">二、设置图像的 width 属性：</span><br><span class="line">$(<span class="string">&quot;button&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">&quot;img&quot;</span>).attr(<span class="string">&quot;width&quot;</span>,<span class="string">&quot;500&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line">（<span class="number">9</span>）返回属性的值：</span><br><span class="line">$(selector).attr(attribute)</span><br><span class="line">设置属性和值：</span><br><span class="line">$(selector).attr(attribute,value)</span><br><span class="line"></span><br><span class="line">三、data.acct_id_2.replace(<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">&#x27;，&#x27;</span>,<span class="string">&quot;g&quot;</span>),<span class="string">&#x27;,&#x27;</span>);</span><br><span class="line"><span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">&#x27;，&#x27;</span>,<span class="string">&quot;g&quot;</span>)的意思是全局搜索，g代表全局搜索，</span><br><span class="line"></span><br><span class="line">四、把一个字符串分割成字符串数组:split</span><br><span class="line"><span class="keyword">var</span> str=<span class="string">&quot;How are you doing today?&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> n=str.split(<span class="string">&quot; &quot;</span>);</span><br><span class="line">[How,are,you,doing,today?]</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+	<div>
+	  
+	</div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://journeyme1.github.io/2021/08/08/title-md/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/001.jpg">
@@ -252,7 +333,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://journeyme1.github.io/2021/08/07/mybatis%E5%A4%8D%E4%B9%A0/">
+    <link itemprop="mainEntityOfPage" href="https://journeyme1.github.io/2021/08/07/mybatis%E5%A4%8D%E4%B9%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/001.jpg">
@@ -512,7 +593,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://journeyme1.github.io/2021/08/06/%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+    <link itemprop="mainEntityOfPage" href="https://journeyme1.github.io/2021/08/06/%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/001.jpg">
@@ -543,7 +624,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-11 19:30:15" itemprop="dateModified" datetime="2021-08-11T19:30:15+08:00">2021-08-11</time>
+                <time title="修改时间：2021-08-13 19:12:25" itemprop="dateModified" datetime="2021-08-13T19:12:25+08:00">2021-08-13</time>
               </span>
 
           
@@ -567,11 +648,11 @@
 
 <h2 id="eclipse-大多和IDEA一样"><a href="#eclipse-大多和IDEA一样" class="headerlink" title="eclipse:(大多和IDEA一样)"></a>eclipse:(大多和IDEA一样)</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CTRL + T :查看子父类</span><br><span class="line"></span><br><span class="line">Alt + shift+  S :get和set方法</span><br><span class="line"></span><br><span class="line">CTRL +H:全局搜索</span><br><span class="line"></span><br><span class="line">选中文件夹，按RIGHT 可以快速打开这个目录，按LEFT 可以快速关闭这个目录。</span><br></pre></td></tr></table></figure>
 
-<h2 id="前端-VSCODE"><a href="#前端-VSCODE" class="headerlink" title="前端:VSCODE"></a>前端:VSCODE</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Ctrl +p:搜索文件</span><br><span class="line">Ctrl +空格:快速换行</span><br><span class="line">Alt +shift +k:删除一行</span><br><span class="line">Ctrl +D</span><br><span class="line">ALT + SHIFT + 左键下拉： 独立选择某一块</span><br></pre></td></tr></table></figure>
+<h2 id="前端-VSCODE"><a href="#前端-VSCODE" class="headerlink" title="前端:VSCODE"></a>前端:VSCODE</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Ctrl +p:搜索文件</span><br><span class="line">Ctrl +空格:快速换行</span><br><span class="line">Alt +shift +k:删除一行</span><br><span class="line">Ctrl +D</span><br><span class="line">ALT + SHIFT + 左键下拉： 独立选择某一块</span><br><span class="line">.app ： <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;app&quot;</span> &gt;</span> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="windows快捷键"><a href="#windows快捷键" class="headerlink" title="windows快捷键:"></a>windows快捷键:</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">windows + D :显示桌面</span><br><span class="line"></span><br><span class="line">windows +R  ：打开运行</span><br><span class="line"></span><br><span class="line">shift + 上、下、左、右 ： 快速选择文本</span><br><span class="line">%20 空格</span><br><span class="line">.. 上级目录</span><br><span class="line">关闭右边键盘 ， 再按0 代表 insert </span><br></pre></td></tr></table></figure>
+<h2 id="windows快捷键"><a href="#windows快捷键" class="headerlink" title="windows快捷键:"></a>windows快捷键:</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">windows + D :显示桌面</span><br><span class="line"></span><br><span class="line">windows +R  ：打开运行</span><br><span class="line"></span><br><span class="line">shift + 上、下、左、右 ： 快速选择文本</span><br><span class="line">%20 空格</span><br><span class="line">.. 上级目录</span><br><span class="line">关闭右边键盘 ， 再按0 代表 insert </span><br><span class="line"></span><br><span class="line">Shift + tab ： 去掉缩进</span><br></pre></td></tr></table></figure>
 
-<h2 id="浏览器快捷键"><a href="#浏览器快捷键" class="headerlink" title="浏览器快捷键:"></a>浏览器快捷键:</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CTRL + SHIFT  +T ：恢复刚刚关闭的页面</span><br></pre></td></tr></table></figure>
+<h2 id="浏览器快捷键"><a href="#浏览器快捷键" class="headerlink" title="浏览器快捷键:"></a>浏览器快捷键:</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CTRL + SHIFT  +T ：恢复刚刚关闭的页面</span><br><span class="line">CTRL + SHIFT +R ：硬性刷新浏览器</span><br><span class="line">CTRL +D :保存标签</span><br></pre></td></tr></table></figure>
 
 <h2 id="word快捷键"><a href="#word快捷键" class="headerlink" title="word快捷键"></a>word快捷键</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CTRL + F:开启导航窗格</span><br></pre></td></tr></table></figure>
 
@@ -607,7 +688,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://journeyme1.github.io/2021/08/05/%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5%E6%80%BB%E7%BB%93/">
+    <link itemprop="mainEntityOfPage" href="https://journeyme1.github.io/2021/08/05/%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/001.jpg">
@@ -702,7 +783,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://journeyme1.github.io/2021/08/03/%E5%85%B3%E4%BA%8EIDEA2017%E9%85%8D%E7%BD%AEweb%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/">
+    <link itemprop="mainEntityOfPage" href="https://journeyme1.github.io/2021/08/03/%E5%85%B3%E4%BA%8EIDEA2017%E9%85%8D%E7%BD%AEweb%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/001.jpg">
@@ -769,7 +850,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://journeyme1.github.io/2021/08/03/%E5%85%B3%E4%BA%8EVUE%E7%BB%84%E4%BB%B6%E7%9A%84%E4%BD%93%E4%BC%9A/">
+    <link itemprop="mainEntityOfPage" href="https://journeyme1.github.io/2021/08/03/%E5%85%B3%E4%BA%8EVUE%E7%BB%84%E4%BB%B6%E7%9A%84%E4%BD%93%E4%BC%9A/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/001.jpg">
@@ -845,7 +926,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://journeyme1.github.io/2021/08/01/spring%E6%95%B4%E5%90%88-spring%E5%B1%82/">
+    <link itemprop="mainEntityOfPage" href="https://journeyme1.github.io/2021/08/01/spring%E6%95%B4%E5%90%88-spring%E5%B1%82/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/001.jpg">
@@ -931,7 +1012,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://journeyme1.github.io/2021/08/01/spring%E6%95%B4%E5%90%88-mybatis%E5%B1%82/">
+    <link itemprop="mainEntityOfPage" href="https://journeyme1.github.io/2021/08/01/spring%E6%95%B4%E5%90%88-mybatis%E5%B1%82/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/001.jpg">
@@ -1020,7 +1101,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://journeyme1.github.io/2021/08/01/Springmvc%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/">
+    <link itemprop="mainEntityOfPage" href="https://journeyme1.github.io/2021/08/01/Springmvc%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/001.jpg">
@@ -1086,76 +1167,6 @@
 <h2 id="子类pom"><a href="#子类pom" class="headerlink" title="子类pom"></a>子类pom</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://maven.apache.org/POM/4.0.0&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>SpringMVC<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.kuang<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springmvc-05-json<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.fasterxml.jackson.core<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jackson-databind<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.10.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="解决jackson中JSON乱码问题"><a href="#解决jackson中JSON乱码问题" class="headerlink" title="解决jackson中JSON乱码问题"></a>解决jackson中JSON乱码问题</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mvc:annotation-driven</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">mvc:message-converters</span> <span class="attr">register-defaults</span>=<span class="string">&quot;true&quot;</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;org.springframework.http.converter.StringHttpMessageConverter&quot;</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">value</span>=<span class="string">&quot;UTF-8&quot;</span>/&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;org.springframework.http.converter.json.MappingJackson2HttpMessageConverter&quot;</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;objectMapper&quot;</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;org.springframework.http.converter.json.Jackson2ObjectMapperFactoryBean&quot;</span>&gt;</span></span><br><span class="line">                   <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;failOnEmptyBeans&quot;</span> <span class="attr">value</span>=<span class="string">&quot;false&quot;</span>/&gt;</span></span><br><span class="line">               <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">mvc:message-converters</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mvc:annotation-driven</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-
-	<div>
-	  
-	</div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://journeyme1.github.io/2021/07/31/%E5%AD%A6%E4%B9%A0%E5%89%8D%E5%90%8E%E7%AB%AF%E9%81%87%E5%88%B0%E7%9A%84%E8%8B%B1%E8%AF%AD%E8%AF%8D%E6%B1%87/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/001.jpg">
-      <meta itemprop="name" content="花有重开日">
-      <meta itemprop="description" content="解决bug集合体">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="花有重开日の博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/31/%E5%AD%A6%E4%B9%A0%E5%89%8D%E5%90%8E%E7%AB%AF%E9%81%87%E5%88%B0%E7%9A%84%E8%8B%B1%E8%AF%AD%E8%AF%8D%E6%B1%87/" class="post-title-link" itemprop="url">学习前后端遇到的英语词汇</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-07-31 23:14:57" itemprop="dateCreated datePublished" datetime="2021-07-31T23:14:57+08:00">2021-07-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-07 21:22:17" itemprop="dateModified" datetime="2021-08-07T21:22:17+08:00">2021-08-07</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">syntax:语法</span><br><span class="line">Query:查询</span><br><span class="line">Ambiguous:模糊的</span><br><span class="line"></span><br><span class="line">Conflicted:冲突</span><br><span class="line"></span><br><span class="line">Script:脚本</span><br><span class="line">Var:variable:变量</span><br><span class="line">以后简称JS</span><br><span class="line">快捷键直接写log,就会跳出console.log</span><br><span class="line">Operator:运算符</span><br><span class="line">console中，黑色代表字符串，蓝色代表数值</span><br><span class="line">我们不会说，要你去说出所有的运算符，没必要</span><br><span class="line">Reverse :翻转</span><br><span class="line">Sort:排序</span><br><span class="line">Ctrl+ ENTER 快速换行</span><br><span class="line">onblur：发散，点出去</span><br><span class="line">Attribute：属性</span><br><span class="line">carousel：轮播</span><br><span class="line">sibling：兄弟</span><br><span class="line">opacity：透明度</span><br><span class="line"></span><br><span class="line">charset:字符集</span><br><span class="line">Property:属性</span><br><span class="line">Attribute:属性</span><br><span class="line"></span><br><span class="line">对象：association。集合：collection。结果集：resultMap</span><br><span class="line"></span><br><span class="line">Query:查询</span><br><span class="line">Parse:解析</span><br><span class="line">Preference:默认</span><br><span class="line">field:属性</span><br><span class="line">Driver:驱动</span><br><span class="line">Annotation:注解</span><br><span class="line">Alias别名</span><br><span class="line">DI:dependency injection:依赖注入</span><br><span class="line">scope:作用域</span><br><span class="line">Autowired:自动装配</span><br><span class="line">Repository:仓库</span><br><span class="line"></span><br><span class="line">Pointcut:切入点</span><br><span class="line">Advisor:环绕</span><br><span class="line">Template:模板</span><br><span class="line"></span><br><span class="line">Transaction:事务</span><br><span class="line"></span><br><span class="line">Parameter:参数</span><br><span class="line">Artifict:打包</span><br><span class="line"></span><br><span class="line">viewResolver：视图显示器</span><br><span class="line">handlerMapping：处理器映射</span><br><span class="line">handlerAdapter：处理器适配器</span><br><span class="line">request：请求</span><br><span class="line">response：响应</span><br><span class="line">prefix：前缀</span><br><span class="line">suffix：后缀</span><br><span class="line"></span><br><span class="line">String的常用方法，还是要多打几遍</span><br><span class="line">Parse:解析</span><br><span class="line">Type:类型</span><br><span class="line">field:属性</span><br><span class="line"></span><br><span class="line">// mybatis</span><br><span class="line">TypeAliases:别名</span><br><span class="line">resultType：数据类型</span><br><span class="line">parameterType:（传入）参数类型</span><br><span class="line">resultMap:</span><br><span class="line">@Alias: 别名</span><br></pre></td></tr></table></figure>
 
 
       
@@ -1247,7 +1258,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
