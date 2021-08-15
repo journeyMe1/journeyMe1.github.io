@@ -216,7 +216,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-08-15 00:44:09 / 修改时间：00:44:49" itemprop="dateCreated datePublished" datetime="2021-08-15T00:44:09+08:00">2021-08-15</time>
+              <time title="创建时间：2021-08-15 00:44:09 / 修改时间：10:30:44" itemprop="dateCreated datePublished" datetime="2021-08-15T00:44:09+08:00">2021-08-15</time>
             </span>
 
           
@@ -333,18 +333,60 @@
 <h3 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这个类名字是dog，那么加上了@Autowired之后，spring就会帮助我们自动去bean.xml中寻找，找到同名的bean.id之后，这个属性spring就自动帮我们装配进去，@Autowiredprivate Dog dog;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="Qualifier"><a href="#Qualifier" class="headerlink" title="@Qualifier"></a>@Qualifier</h2><p>指定到bean里面去找指定的id值 ： cat22</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Autowired@Qualifier(value = &quot;cat22&quot;)private  Cat cat;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@Autowired</span><br><span class="line">@Qualifier(value = &quot;cat22&quot;)</span><br><span class="line">private  Cat cat;</span><br></pre></td></tr></table></figure>
 
+<p>什么叫注解实现自动装配？  注解在属性上生效-&gt;spring就会自动来bean上面找 -&gt;找到对应的bean，就自动装配</p>
+<h1 id="P14-、Spring注解开发"><a href="#P14-、Spring注解开发" class="headerlink" title="P14 、Spring注解开发"></a>P14 、Spring注解开发</h1><p>使用spring注解开发，一定要保证aop的包导入了</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">&lt;!--指定要扫描的包，这个包下的注解就会生效--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">&quot;com.kuang.pojo&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
 
+<h2 id="Component"><a href="#Component" class="headerlink" title="@Component"></a>@Component</h2><p>pojo层下</p>
+<p>等价于&lt;bean id= “user’ class=”com. kuang. pojo.User”/&gt;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//等价于&lt;bean id= &quot;user&#x27; class=&quot;com.kuang.pojo.User&quot;/&gt;</span></span><br><span class="line"><span class="comment">// @Component ：组件，说明这个类被spring管理了，被spring注册，就是bean</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">User user = context.getBean(<span class="string">&quot;user&quot;</span>, User.class);</span><br></pre></td></tr></table></figure>
 
+<h2 id="Value"><a href="#Value" class="headerlink" title="@Value"></a>@Value</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Value(&quot;狂神&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br></pre></td></tr></table></figure>
 
+<h2 id="Repository"><a href="#Repository" class="headerlink" title="@Repository"></a>@Repository</h2><p>DAO层下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Repository</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserDao</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h2 id="Service"><a href="#Service" class="headerlink" title="@Service"></a>@Service</h2><p>service层下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserService</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Controller"><a href="#Controller" class="headerlink" title="@Controller"></a>@Controller</h2><p>controller层下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@org</span>.springframework.stereotype.Controller</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Controller</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h2><p>@Component、@Repository、@Service、@Controller。这四个功能都是一样的，都是把某个类装配到spring中，自动装配</p>
+<h1 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h1><p>除了springboot用注解，很多公司spring还是按照配置来的</p>
+<p>spring取代了servlet。</p>
+<p>spring就是：pom导入依赖，然后beanx.xml 进行bean注册，就可以了。getbean（从spring拿到这个类，创建对象，调用这个类的方法）</p>
+<p>springMVC就是： web.xml 找-&gt; springmvc-servlet.xml  找-&gt;   Controller</p>
+<p>mybatis 就是: 写一个工具类返回SqlSessionFactory -&gt;  配置mybatis-config.xml 里的：数据库连接，别名，mapper映射  - &gt; getmapper(拿到这个mapper对象，调用它的SQL方法)</p>
+<p>Java基础的课，两天没上，都没关系，框架的课，一走神，就理解不了。</p>
 <h1 id="学习："><a href="#学习：" class="headerlink" title="学习："></a>学习：</h1><p>bean注入，容器存放，spring存放对象</p>
 <p>注解自动装配</p>
 <p>set注入，p命名空间注入</p>
 <p>控制权交给客户，而不是程序员</p>
 <p>byName、byType</p>
-<p>@Autowired</p>
+<p>@Autowired、@Qualifier(value = “cat22”)</p>
+<p>@Component、@Value(“狂神”)： pojo层</p>
+<p>@Repository :DAO层</p>
+<p>@Autowired ：什么叫注解实现自动装配？  注解在属性上生效-&gt;spring就会自动来bean上面找 -&gt;找到对应的bean，就自动装配。简单来说，就是属性，属性会自动去bean里面的id找，找到了就自动装配</p>
+<p>@Component ： 加上这个，spring就会把这个类注册到spring配置里面，就是bean。</p>
+<p>扫描包，加上注解，之后自动装配</p>
+<h1 id="一些笔记"><a href="#一些笔记" class="headerlink" title="一些笔记"></a>一些笔记</h1><p>beans.xml去官网上拷贝，之后自己的保存了，可以在自己博客拷贝</p>
+<p>Java的课，你两天没上，没有影响。<br>不过spring的课，你一不留神，就理解不了</p>
+<p>使用spring后，对象是由spring创建的，使用再去取出来</p>
+<p>使用class绝对路径去找到这个类，实现关联<br>&lt; bean id=”hello” class=”com.kuang.pojo.HelloSpring” &gt;</p>
+<p>手动装配，每一个属性都要自己去设置，不然会为空。自动装配就是解决这个<br>●自动装配是Spring满足bean依赖一种方式!<br>●Spring会在 上下文中自动寻找，并自动给bean装配属性!</p>
+<p>@Data<br>@AllArgsConstructor<br>@NoArgsConstructor</p>
+<p>&lt; !– byName:会自动在容器上下文中查找，和自己对象set方法后面的值对应的beanid–&gt;<br>autowire=”byName”</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;persom&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.kuang.pojo.Person&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span> <span class="attr">value</span>=<span class="string">&quot;小小狂神&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;dog&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;dog&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;cat&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;cat&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line">@Autowired</span><br><span class="line">private Dog dog;</span><br><span class="line">@Autowired</span><br><span class="line">private  Cat cat;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;persom&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.kuang.pojo.Person&quot;</span> &gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span> <span class="attr">value</span>=<span class="string">&quot;小小狂神&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//等价于<span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>= <span class="string">&quot;user&#x27; class=&quot;</span><span class="attr">com.</span> <span class="attr">kuang.</span> <span class="attr">pojo.User</span>&quot;/&gt;</span></span><br><span class="line">// @Component ：组件，说明这个类被spring管理了，就是bean</span><br><span class="line">@Component</span><br><span class="line">public class User &#123;</span><br><span class="line">    private String name;</span><br><span class="line">&#125;</span><br><span class="line">User user = context.getBean(&quot;user&quot;, User.class);</span><br></pre></td></tr></table></figure>
+
+<p>@Component、@Repository、@Service、@Controller。这四个功能都是一样的，都是把某个类装配到spring中，自动装配</p>
+<p>@Autowired 自动装配，就是自动装配属性</p>
 
       
     </div>
@@ -391,10 +433,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-08-14 15:32:29 / 修改时间：15:45:01" itemprop="dateCreated datePublished" datetime="2021-08-14T15:32:29+08:00">2021-08-14</time>
+              <time title="创建时间：2021-08-14 15:32:29" itemprop="dateCreated datePublished" datetime="2021-08-14T15:32:29+08:00">2021-08-14</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-15 10:14:16" itemprop="dateModified" datetime="2021-08-15T10:14:16+08:00">2021-08-15</time>
+              </span>
 
           
 
@@ -495,6 +543,16 @@
 <p>（2）data :键值对</p>
 <p>（3）success:回调函数</p>
 <p>3.给Ajax绑定事件,点击.click, 失去焦点onblur,键盘弹起keyup</p>
+<h1 id="一些笔记"><a href="#一些笔记" class="headerlink" title="一些笔记"></a>一些笔记</h1><p>这就是返回的JSON格式，在JSON里面，集合和数组用[]表示，对象都{}表示，用逗号分开。<br>[{“name”:”琴江1”,”age”:1,”sex”:”男”},<br>{“name”:”琴江2”,”age”:2,”sex”:”男”},<br>{“name”:”琴江3”,”age”:3,”sex”:”男”},<br>{“name”:”琴江4”,”age”:4,”sex”:”男”}]</p>
+<p>其实JSON也是一种字符串<br>XHR：异步交互请求,也包括ajax</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadPage</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> targetUrl = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;url&#x27;</span>).value;</span><br><span class="line">        <span class="built_in">document</span>.getElementById(<span class="string">&#x27;iframePosition&#x27;</span>).src = targetUrl;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>// String 默认不能不写，至少写”” 或者null<br>String msg = “”;</p>
+<p>springmvc-servlet ：是去扫描controller层，扫描到控制器。不是扫描到bean，</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">1</span>)</span><br><span class="line"> <span class="comment">//JS</span></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">&#x27;url&#x27;</span>).value;</span><br><span class="line"><span class="comment">//jQuery</span></span><br><span class="line">$(<span class="string">&quot;#textName&quot;</span>).val()</span><br><span class="line">(<span class="number">2</span>)</span><br><span class="line"><span class="comment">//JS</span></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">&quot;tr1&quot;</span>).innerHTML</span><br><span class="line"><span class="comment">//jQuery</span></span><br><span class="line">$(<span class="string">&quot;#tr1&quot;</span>).html()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>（1）ajax传过去的key一定要和后端接收的同名，不然后端拿不到ajax传过去的值<br>（2）success :function()里面就是接收JSON，你随便给它起名都可以，里面就是JSON包含着各种对象<br>success : function (data,status){}<br>// data： 封装了服务器返回的数据<br>//status ： 状态，一般就是OK</p>
+<p>return list //由于加上@ResponseBody注解， 他会返回一个JSON字符串;<br>这是引入jackson依赖的作用</p>
 
       
     </div>
