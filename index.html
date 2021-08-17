@@ -775,10 +775,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-08-13 19:13:58 / 修改时间：19:32:43" itemprop="dateCreated datePublished" datetime="2021-08-13T19:13:58+08:00">2021-08-13</time>
+              <time title="创建时间：2021-08-13 19:13:58" itemprop="dateCreated datePublished" datetime="2021-08-13T19:13:58+08:00">2021-08-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-17 20:16:28" itemprop="dateModified" datetime="2021-08-17T20:16:28+08:00">2021-08-17</time>
+              </span>
 
           
 
@@ -810,6 +816,18 @@
 <p>ajax一定要看视频去学一下，就两三个小时，重要看老师实际操作，要看一下请求怎么发生的，什么时候发生的，虽然简单，但是非常有利于你对之后实际项目的理解，我又理解了两天，今天结合后端，慢慢有点看懂这个1000行的JS的逻辑了。有些事初始化就要请求数据显示出来，有些是点击按钮请求数据显示出来，有些是下拉框更换请求数据重新刷新</p>
 <h2 id="JS常用方法"><a href="#JS常用方法" class="headerlink" title="JS常用方法"></a>JS常用方法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">一、jQuery.extend() 函数用于将一个或多个对象的内容合并到目标对象。</span><br><span class="line">注意：①. 如果只为$.extend()指定了一个参数，则意味着参数target被省略。此时，target就是jQuery对象本身。通过这种方式，我们可以为全局对象jQuery添加新的函数。</span><br><span class="line">②. 如果多个对象具有相同的属性，则后者会覆盖前者的属性值。</span><br><span class="line"></span><br><span class="line">二、设置图像的 width 属性：</span><br><span class="line">$(<span class="string">&quot;button&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">&quot;img&quot;</span>).attr(<span class="string">&quot;width&quot;</span>,<span class="string">&quot;500&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line">（<span class="number">9</span>）返回属性的值：</span><br><span class="line">$(selector).attr(attribute)</span><br><span class="line">设置属性和值：</span><br><span class="line">$(selector).attr(attribute,value)</span><br><span class="line"></span><br><span class="line">三、data.acct_id_2.replace(<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">&#x27;，&#x27;</span>,<span class="string">&quot;g&quot;</span>),<span class="string">&#x27;,&#x27;</span>);</span><br><span class="line"><span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">&#x27;，&#x27;</span>,<span class="string">&quot;g&quot;</span>)的意思是全局搜索，g代表全局搜索，</span><br><span class="line"></span><br><span class="line">四、把一个字符串分割成字符串数组:split</span><br><span class="line"><span class="keyword">var</span> str=<span class="string">&quot;How are you doing today?&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> n=str.split(<span class="string">&quot; &quot;</span>);</span><br><span class="line">[How,are,you,doing,today?]</span><br></pre></td></tr></table></figure>
 
+
+
+<h2 id="8-17总结"><a href="#8-17总结" class="headerlink" title="8.17总结"></a>8.17总结</h2><p>1.<br>前后端分离，前端真的做的事情多的太多了，我觉得前端代码量有后端的2倍，真的不能再看不起前端了<br>Vue：把代码写在HTML算我输，</p>
+<p>&lt; div id=”model”&gt; 这就是一个页面</p>
+<p>2.说实话这里现在看来挺好的<br>我导师给我很大的空间<br>下个月我才开始接单，我部门经理说，不能等我导师给我安排，如果觉得学得差不多了，就和他说，给我安排任务<br>前端也可以全栈，后端不给数据，前端可以自己造，自己测试，完全可以不用后端介入‘’<br>我还有40小时的Vue要学，20小时的springboot要学。然后就去看上个月改得旧项目，再复习JS基础。之后就专注公司业务。SSM整合<br>以前JSP时代，全栈完全是后端做，以前的前端就是HTML+CSS没了，真的做的很少，对人要求不大。后端就要做的特别多。<br>前后端分离之后，前端各种框架层出不穷，主要是angular、react、Vue三大框架，组件成百上千，不一样了，后端轻松点，前端忙起来了<br>学了一个新词，scirpt：脚本。 这家伙以前就是用来写脚本，实现一些按钮的功能，没想到后来成为前端半壁江山。叫JavaScript就是因为那时候java很火，不过两者没太大关系</p>
+<p>3.我觉得后端那些SQL查询，非常复杂，现在应该写不出来<br>后端就一个业务代码，然后mybatis实现增删改查<br>我后端都没有自己去打代码<br>我觉得到今天，是可以叫我导师给我分配单子了<br>如果我有私心，就用上班时间来学Vue和springboot<br>前端我看得差不多了<br>但是我应该问我导师，后端我到底写不写，还是说就改改bug</p>
+<p>再看下组件的功能,seaJS<br>业务逻辑可以不用太细究，因为以后不会让你做这个，而且业务逻辑每次都不一样<br>unbind(‘click’)防止重复点击</p>
+<p>4.封装spring，springMVC，不是springboot<br>模块化，打包不用我们去管。也没有用到Vue，就是JS<br>这些查询都是基本的要掌握的</p>
+<p>@Service(“esowpBase_acctUseService”) 这是指定的服务，不能重名<br>@Service(“esowpBase_acctUseService1”)<br>要在src下自动生成代码   DAO和PO<br>有四个默认的，mapper.xml,mapper.java</p>
+<p>封装spring，springMVC，不是springboot<br>模块化，打包不用我们去管。也没有用到Vue，就是JS<br>这是我导师说的，咋整<br>Vue和springboot都没用到<br>我还学不学了</p>
+<p>有空肯定学啊<br>学吧  有空就学呗<br>没空就算了<br>目前以工作为主<br>等你哪天想跳槽了  用的到</p>
+<p>5.springboot<br>解决spring配置太杂的原因，spring有外号“配置地域”<br>把框架骨架抽出来，一些基础配置就不用每次新建项目都要去做了<br>SSM基本的整合都帮你做好<br>后端框架会比较稳定，就是spring系列框架不断发展<br>前端框架多变，越出越多，现在的这个VUE，是中国人做出来的，2014年发布，官网是中文的，现在已经成为国际标准<br>不过前端框架太多了<br>反正开发就是朝着越来越简单去的，不管是前端后端都一样</p>
 
       
     </div>
@@ -1185,7 +1203,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-15 00:02:00" itemprop="dateModified" datetime="2021-08-15T00:02:00+08:00">2021-08-15</time>
+                <time title="修改时间：2021-08-17 20:18:37" itemprop="dateModified" datetime="2021-08-17T20:18:37+08:00">2021-08-17</time>
               </span>
 
           
@@ -1208,7 +1226,7 @@
 
 
 
-<h2 id="eclipse-大多和IDEA一样"><a href="#eclipse-大多和IDEA一样" class="headerlink" title="eclipse:(大多和IDEA一样)"></a>eclipse:(大多和IDEA一样)</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CTRL + T :查看子父类</span><br><span class="line"></span><br><span class="line">Alt + shift+  S :get和set方法</span><br><span class="line"></span><br><span class="line">CTRL +H:全局搜索</span><br><span class="line"></span><br><span class="line">选中文件夹，按RIGHT 可以快速打开这个目录，按LEFT 可以快速关闭这个目录。</span><br></pre></td></tr></table></figure>
+<h2 id="eclipse-大多和IDEA一样"><a href="#eclipse-大多和IDEA一样" class="headerlink" title="eclipse:(大多和IDEA一样)"></a>eclipse:(大多和IDEA一样)</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">CTRL + T :查看子父类</span><br><span class="line"></span><br><span class="line">Alt + shift+  S :get和set方法</span><br><span class="line"></span><br><span class="line">CTRL +H:全局搜索</span><br><span class="line"></span><br><span class="line">选中文件夹，按RIGHT 可以快速打开这个目录，按LEFT 可以快速关闭这个目录。</span><br><span class="line"></span><br><span class="line"> 鼠标放在第二个括号右边，双击，就可以选中括号里面的内容  ( aafff)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <h2 id="前端-VSCODE"><a href="#前端-VSCODE" class="headerlink" title="前端:VSCODE"></a>前端:VSCODE</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Ctrl +p:搜索文件</span><br><span class="line">Ctrl +空格:快速换行</span><br><span class="line">Alt +shift +k:删除一行</span><br><span class="line">Ctrl +D</span><br><span class="line">ALT + SHIFT + 左键下拉： 独立选择某一块</span><br><span class="line">.app ： <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;app&quot;</span> &gt;</span> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
