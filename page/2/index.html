@@ -134,7 +134,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">17</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">18</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -187,6 +187,82 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://journeyme1.github.io/2021/08/03/%E5%85%B3%E4%BA%8EVUE%E7%BB%84%E4%BB%B6%E7%9A%84%E4%BD%93%E4%BC%9A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/001.jpg">
+      <meta itemprop="name" content="花有重开日">
+      <meta itemprop="description" content="解决bug集合体">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="花有重开日の博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/08/03/%E5%85%B3%E4%BA%8EVUE%E7%BB%84%E4%BB%B6%E7%9A%84%E4%BD%93%E4%BC%9A/" class="post-title-link" itemprop="url">关于VUE组件的体会</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-08-03 21:47:19 / 修改时间：22:29:27" itemprop="dateCreated datePublished" datetime="2021-08-03T21:47:19+08:00">2021-08-03</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="关于JS"><a href="#关于JS" class="headerlink" title="关于JS"></a>关于JS</h2><p>我们用到了Vue，公司是有公共的组件。我们用Alert = require(‘alert’)这种方式来引入需要的UI组件，这些组件都是已经被定义好的。</p>
+<p>比如’modal’是个模型，left-navigation是左边导航，tab是一个表格。</p>
+<p>引入之后，this.fund_class_left_menu = new LeftNavigation(){} 。我们就可以new一个我们需要的比如表格，左导航烂，然后往里面填写东西，定义完这个表格或者左导航栏的内容之后，我们声明 el: “#fund_class_div”。 </p>
+<p>在JS里面，写完配置之后，记得给this.fund_class_left_menu 调用render() 方法，render就是渲染，把表格渲染出来。</p>
+<p>引入了组件，我们每次要用到一个表格，就创建一个，然后填数据，要多少个就创建多少个，然后再HTML里面，写入匹配的id（每一个id都是唯一的），把表格塞进那个标签里面。</p>
+<h2 id="关于HTML"><a href="#关于HTML" class="headerlink" title="关于HTML"></a>关于HTML</h2><p>写完JS，我们就在HTML的body 标签下的div里面，加上JS写的那个id，  &lt;div id = fund_class_div  ，这样JS里面的表格就被塞进HTML里面 ，HTML写的就简单点了，JS根据el: “#fund_class_div” 找到对应的div标签，往里面填入我们定义好的表格，就可以了。</p>
+<h2 id="关于前端请求后端"><a href="#关于前端请求后端" class="headerlink" title="关于前端请求后端"></a>关于前端请求后端</h2><p>前端需要从后端拿到数据，打开F12，点击一个按钮，跳转。前端一般是发送一个.do的命令给后端。第一，在F12的NETWORK点击一个.do的文件，第二，点击这个文件的response，response的内容就是从后端发给前端的。 第三，把页面的内容随机拿几个文字过来（这些就是后端交给前端，我们显示在页面上的），在response里面搜索一下，是否有成功对比的。有这个文件就是我们要找的后端文件。</p>
+<p>请求的URL是写在ajax里。整个流程大概就是，前端请求后端的数据，后端返回，在前端的ajax这边，有个success方法，这方法写在回调里面。回调的意思是说，等到前面的函数执行完，才执行回调里面的方法。success方法的意思是说，如果成功拿到数据，就把这些数据填到表格里，然后渲染，显示在页面中。</p>
+<h2 id="关于如何快速找到：点击一个按钮，主页面跳出来的子页面"><a href="#关于如何快速找到：点击一个按钮，主页面跳出来的子页面" class="headerlink" title="关于如何快速找到：点击一个按钮，主页面跳出来的子页面"></a>关于如何快速找到：点击一个按钮，主页面跳出来的子页面</h2><p>点击了这个按钮之后，就会跳到一个新的方法，新的方法就会创建一个新的组件显示在页面，这个组件之后初始化完，一定会有一个render方法，找到这个render前面的方法（***.render)，就是我们要找的后端页面。</p>
+<p>快捷键：</p>
+<p>CTRL + R：全局搜索</p>
+<p>CTRL + H ：搜索文件</p>
+<p>CTRL + SHIFT + C :选中，然后注释掉。</p>
+<p>最后，感谢羽毛同志</p>
+
+      
+    </div>
+
+    
+    
+    
+
+	<div>
+	  
+	</div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -866,7 +942,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
